@@ -9,7 +9,13 @@
 #ifndef readFile_h
 #define readFile_h
 
+#include "stringFuncs.h"
 #include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <string.h>
+#include <ctype.h>
+#include <stdbool.h>
 
 struct atom {
     int ID;
@@ -35,9 +41,10 @@ struct protein{
     struct atom *atoms;
     struct chain *chains;
     struct residue *residues;
-    
     int size_atom;
     int size_residue;
     int size_chain;
 };
+int checkCommand(int x, char **y);
+void readFile(char *fileName, struct protein *P);
 #endif /* readFile_h */
